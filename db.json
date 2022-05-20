@@ -1,0 +1,28 @@
+{
+  "clientes": [
+    {
+      "name": "Hector",
+      "company": "HROD",
+      "email": "test@test.com",
+      "phone": "8888888",
+      "notes": "test",
+      "id": 1
+    },
+    {
+      "name": "Hector",
+      "company": "HROD",
+      "email": "test@test.com",
+      "phone": "888888",
+      "notes": "test",
+      "id": 2
+    },
+    {
+      "name": "Lia",
+      "company": "Tets",
+      "email": "test@test.com",
+      "phone": "8888888",
+      "notes": "Test",
+      "id": 3
+    }
+  ]
+}

@@ -1,10 +1,12 @@
-import React from 'react'
+import ClientForm from "../components/ClientForm"
 
 const NewClient = () => {
   return (
-    <div>
-      <h1>Nuevo Cliente</h1>
-    </div>
+    <>
+      <h1 className='font-black text-blue-900 text-4xl'>Nuevo Cliente</h1>
+      <p>Llena los siguientes campos pararegistrar un cliente</p>
+      <ClientForm />
+    </>
   )
 }
 
