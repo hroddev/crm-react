@@ -3,6 +3,7 @@ import Layout from './layout/Layout'
 import Home from './pages/Home'
 import NewClient from './pages/NewClient'
 import EditClient from './pages/EditClient'
+import ShowClient from './pages/ShowClient'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
             <Route index element={<Home />}/>
             <Route path='nuevo' element={<NewClient/>} />
             <Route path='editar/:id' element={<EditClient/>} />
+            <Route path=':id' element={<ShowClient/>} />
         </Route>
       </Routes>
     </BrowserRouter>

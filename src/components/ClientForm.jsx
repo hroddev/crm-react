@@ -66,7 +66,7 @@ const ClientForm = () => {
                 <Form className="mb-10">
                     <div className='mb-4'>
                         <label className='text-gray-800'
-                            httpFor="name"
+                            httpfor="name"
                             >Nombre
                         </label>
                         <Field
@@ -82,7 +82,7 @@ const ClientForm = () => {
                     </div>
                     <div className='mb-4'>
                         <label className='text-gray-800'
-                            httpFor="company"
+                            httpfor="company"
                             >Empresa
                         </label>
                         <Field
@@ -98,7 +98,7 @@ const ClientForm = () => {
                     </div>
                     <div className='mb-4'>
                         <label className='text-gray-800'
-                            httpFor="email"
+                            httpfor="email"
                             >E-mail
                         </label>
                         <Field
@@ -114,7 +114,7 @@ const ClientForm = () => {
                     </div>
                     <div className='mb-4'>
                         <label className='text-gray-800'
-                            httpFor="phone"
+                            httpfor="phone"
                             >Telefono
                         </label>
                         <Field
@@ -130,7 +130,7 @@ const ClientForm = () => {
                     </div>
                     <div className='mb-4'>
                         <label className='text-gray-800'
-                            httpFor="notes"
+                            httpfor="notes"
                             >Notas
                         </label>
                         <Field
