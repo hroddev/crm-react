@@ -4,7 +4,7 @@
       "name": "Hector",
       "company": "HROD",
       "email": "test@test.com",
-      "phone": "8888888",
+      "phone": "88888888",
       "notes": "test",
       "id": 1
     },
@@ -12,17 +12,57 @@
       "name": "Hector",
       "company": "HROD",
       "email": "test@test.com",
-      "phone": "",
-      "notes": "",
+      "phone": "99999",
+      "notes": "prueba de edicion",
       "id": 2
     },
     {
       "name": "Lia",
-      "company": "Tets",
+      "company": "Test",
       "email": "test@test.com",
       "phone": "8888888",
       "notes": "Test",
       "id": 3
+    },
+    {
+      "name": "Karine Serrano",
+      "company": "La Canelita - Repostería Casera",
+      "email": "test@test.com",
+      "phone": "9999",
+      "notes": "Nuevo cliente",
+      "id": 4
+    },
+    {
+      "name": "Hrod",
+      "company": "Mundo Fut",
+      "email": "test@test.com",
+      "phone": "88",
+      "notes": "",
+      "id": 5
+    },
+    {
+      "name": "Hrod",
+      "company": "Test",
+      "email": "test@test.com",
+      "phone": "99999",
+      "notes": "test 2",
+      "id": 6
+    },
+    {
+      "name": "Hrod",
+      "company": "Test 3",
+      "email": "test@test.com",
+      "phone": "99999",
+      "notes": "test 3",
+      "id": 7
+    },
+    {
+      "name": "Hrod 4",
+      "company": "Test 4",
+      "email": "test@test.com",
+      "phone": "99999",
+      "notes": "TEST 4",
+      "id": 8
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
+import Spinner from "../components/Spinner"
 
 const ShowClient = () => {
 
@@ -9,7 +10,7 @@ const ShowClient = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        setLoading(!loading)
+
         const getClient = async () => {
             try {
                 const url = `http://localhost:4000/clientes/${id}`
@@ -28,7 +29,7 @@ const ShowClient = () => {
             // validate if the id exist
             Object.keys(client).length === 0 ? <p>No hay resultados</p> : (
                 <div>
-                    {loading ? 'cargando...' : (
+                    {loading ? <Spinner /> : (
                     <>
                         <h1 className='font-black text-blue-900 text-4xl mb-3'>Ver Cliente: {client.name}</h1>
                         <p>Imformación del Cliente</p>

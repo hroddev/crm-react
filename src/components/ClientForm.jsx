@@ -1,9 +1,10 @@
-import { Formik, Form, Field, ErrorMessage, yupToFormErrors } from 'formik'
+import { Formik, Form, Field } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import * as Yup from 'yup'
 import Alert from './Alert'
+import Spinner from './Spinner'
 
-const ClientForm = () => {
+const ClientForm = ({client, loading}) => {
 
     const navigate = useNavigate()
 
@@ -25,36 +26,50 @@ const ClientForm = () => {
 
     const handleSubmit = async (values) => {
         try {
-            const url = 'http://localhost:4000/clientes'
+            let resp
+            if (client.id) {
+                // edit registry
+                const url = `http://localhost:4000/clientes/${client.id}`
 
-            const resp = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(values),
-                headers: {
-                    'Content-Type': 'application/json'
+                resp = await fetch(url, {
+                    method: 'PUT',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+            } else {
+                // new registry
+                const url = 'http://localhost:4000/clientes'
+
+                resp = await fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify(values),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
                 }
-            })
-            console.log(resp)
-            const result = await resp.json()
-            console.log(result)
-            navigate('/clientes')
+                await resp.json()
+                navigate('/clientes')
         } catch (error) {
             console.log(error)
         }
     }
     return (
         <div className="bg-white mt-10 px-5 py-10 rounded-md shadow-md md:w-3/4 mx-auto">
-            <h2 className="text-gray-600 font-bold text-xl uppercase text-center"> Agrega Cliente</h2>
+            <h2 className="text-gray-600 font-bold text-xl uppercase text-center">
+            {client?.name ? 'Editar Cliente' : 'Agregar Cliente'}</h2>
 
             <Formik
                 initialValues={{
-                    name: '',
-                    company: '',
-                    email: '',
-                    phone: '',
-                    notes: ''
-
+                    name: client?.name ?? '',
+                    company: client?.company ?? '',
+                    email: client?.email ?? '',
+                    phone: client?.phone ?? '',
+                    notes: client?.notes ?? ''
                 }}
+                enableReinitialize={true}
                 onSubmit= { async (v, {resetForm}) => {
                     await handleSubmit(v)
                     resetForm()
@@ -62,7 +77,9 @@ const ClientForm = () => {
                 validationSchema={newClientShema}
             >
                 {({errors, touched}) => {
+
                     return (
+                        loading ? <Spinner /> : (
                 <Form className="mb-10">
                     <div className='mb-4'>
                         <label className='text-gray-800'
@@ -144,14 +161,20 @@ const ClientForm = () => {
                     </div>
                     <input
                         type="submit"
-                        value="Agregar Cliente"
+                        value={client?.name ? 'Editar Cliente' : 'Agregar Cliente'}
                         className='mt-5 p-3 w-full bg-blue-800 text-white uppercase font-bold text-lg hover:bg-blue-600'
                     />
                 </Form>
+                        )
                 )}}
             </Formik>
         </div>
     )
+}
+
+ClientForm.defaultProps = {
+    client: {},
+    loading: false
 }
 
 export default ClientForm
