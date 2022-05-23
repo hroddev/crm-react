@@ -1,15 +1,15 @@
 {
   "clientes": [
     {
-      "name": "Hector",
-      "company": "HROD",
+      "name": "John Doe",
+      "company": "Test Cia",
       "email": "test@test.com",
       "phone": "88888888",
       "notes": "test",
       "id": 1
     },
     {
-      "name": "Lia",
+      "name": "Marie Doe",
       "company": "Test",
       "email": "test@test.com",
       "phone": "8888888",
@@ -17,16 +17,16 @@
       "id": 3
     },
     {
-      "name": "Karine Serrano",
-      "company": "La Canelita - Repostería Casera",
+      "name": "Test Name",
+      "company": "Acme",
       "email": "test@test.com",
       "phone": "9999",
       "notes": "Nuevo cliente",
       "id": 4
     },
     {
-      "name": "Hrod",
-      "company": "Mundo Fut",
+      "name": "Test Name 2",
+      "company": "Acme",
       "email": "test@test.com",
       "phone": "88",
       "notes": "",
