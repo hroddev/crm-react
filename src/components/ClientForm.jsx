@@ -29,7 +29,7 @@ const ClientForm = ({client, loading}) => {
             let resp
             if (client.id) {
                 // edit registry
-                const url = `http://localhost:4000/clientes/${client.id}`
+                const url = `${import.meta.env.VITE_API_URL}/${client.id}`
 
                 resp = await fetch(url, {
                     method: 'PUT',
@@ -40,7 +40,7 @@ const ClientForm = ({client, loading}) => {
                 })
             } else {
                 // new registry
-                const url = 'http://localhost:4000/clientes'
+                const url = import.meta.env.VITE_API_URL
 
                 resp = await fetch(url, {
                     method: 'POST',
