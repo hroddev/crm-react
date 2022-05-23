@@ -9,14 +9,6 @@
       "id": 1
     },
     {
-      "name": "Hector",
-      "company": "HROD",
-      "email": "test@test.com",
-      "phone": "99999",
-      "notes": "prueba de edicion",
-      "id": 2
-    },
-    {
       "name": "Lia",
       "company": "Test",
       "email": "test@test.com",
@@ -39,30 +31,6 @@
       "phone": "88",
       "notes": "",
       "id": 5
-    },
-    {
-      "name": "Hrod",
-      "company": "Test",
-      "email": "test@test.com",
-      "phone": "99999",
-      "notes": "test 2",
-      "id": 6
-    },
-    {
-      "name": "Hrod",
-      "company": "Test 3",
-      "email": "test@test.com",
-      "phone": "99999",
-      "notes": "test 3",
-      "id": 7
-    },
-    {
-      "name": "Hrod 4",
-      "company": "Test 4",
-      "email": "test@test.com",
-      "phone": "99999",
-      "notes": "TEST 4",
-      "id": 8
     }
   ]
 }

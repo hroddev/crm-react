@@ -19,6 +19,25 @@ const Home = () => {
     }
     getClient()
   },[])
+
+  const handleDelete = async id => {
+    const confirmar = confirm('¿Deseas eliminar el registro?')
+
+    if (confirmar) {
+      try {
+        const url = `http://localhost:4000/clientes/${id}`
+        const resp = await fetch(url, {
+          method: 'DELETE'
+        })
+        await resp.json()
+
+        const arrayClients = clients.filter( cliente => cliente.id !== id )
+        setClients(arrayClients)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
   return (
     <>
       <h1 className='font-black text-blue-900 text-4xl mb-3'>Clientes</h1>
@@ -39,6 +58,7 @@ const Home = () => {
               <Client
                   key={client.id}
                   client={client}
+                  handleDelete={handleDelete}
               />
             ))}
         </tbody>
